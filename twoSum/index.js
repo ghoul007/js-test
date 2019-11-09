@@ -1,10 +1,11 @@
 const twoSum = (nums, target) => {
     const comp = {};
     for (let i = 0; i < nums.length; i++) {
-        if (comp[nums[i]] >= 0) {
-            return [comp[nums[i]], i]
+        const diff = target - nums[i];
+        if (comp[diff] !=  undefined) {
+            return [comp[diff], i]
         }
-        comp[target - nums[i]] = i
+        comp[nums[i]] = i
     }
 };
 
